@@ -75,7 +75,7 @@ const NavigationComponent = (props: Props) => {
               <div className="relative w-[34px] before:content-[''] before:block before:absolute before:top-2 before:left-[9px] before:w-0.5 before:h-[calc(100%-30px)] before:bg-zinc-200 dark:before:bg-zinc-700 before:z-10 shrink-0">
                 <div className="absolute left-[9px] top-[11px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[52px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[48px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
               </div>
 
               <div className="Portfolio-Routes-List Side-Bar-Card-List p-0 mt-1 w-full">

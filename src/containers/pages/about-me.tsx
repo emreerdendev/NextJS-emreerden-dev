@@ -1,29 +1,29 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 //
-import { motion } from 'framer-motion';
 import { calculateAge, cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 //
 import { Button } from '@/components/ui/button';
 import {
-  EducationData,
   CertificationData,
-  LanguageData,
+  EducationData,
   EventData,
+  LanguageData,
 } from '@/constants/pages/about-me/data';
-import EducationCardComponent from './about-me/education-card';
 import CertificationCardComponent from './about-me/certification-card';
+import EducationCardComponent from './about-me/education-card';
 import EventCardComponent from './about-me/event-card';
 
-type AboutTab = 'Education' | 'Certifications' | 'Events' | 'Languages';
+type AboutTab = 'Education' | 'Certifications' | 'Languages' | 'Events';
 
 type Props = {};
 
 const AboutPageComponent = (props: Props) => {
   const age = calculateAge(new Date('2000-11-09'));
-  const [tab, setTab] = useState<AboutTab>('Events');
-  const tabs: AboutTab[] = ['Events', 'Certifications', 'Education', 'Languages'];
+  const [tab, setTab] = useState<AboutTab>('Education');
+  const tabs: AboutTab[] = ['Education', 'Certifications', 'Languages', 'Events'];
 
   return (
     <main className="About Page">
@@ -73,24 +73,6 @@ const AboutPageComponent = (props: Props) => {
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.2, delay: 5 * 0.1 }}
-            >
-              I love watching Movies and TV Series. And I like to talk to people
-              about them. If you want to see the movies I watched and my watch
-              list:{' '}
-              <a
-                target="_blank"
-                href="https://letterboxd.com/Wiazeph/"
-                rel="noopener noreferrer"
-                className="underline hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors"
-              >
-                My Letterboxd Account
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 6 * 0.1 }}
             >
               I love playing computer games since childhood. It's something I
@@ -104,6 +86,24 @@ const AboutPageComponent = (props: Props) => {
                 My Steam Account
               </a>{' '}
               for the games I play and add me as a friend.
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2, delay: 5 * 0.1 }}
+            >
+              I love watching Movies and TV Series. And I like to talk to people
+              about them. If you want to see the movies I watched and my watch
+              list:{' '}
+              <a
+                target="_blank"
+                href="https://letterboxd.com/Wiazeph/"
+                rel="noopener noreferrer"
+                className="underline hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors"
+              >
+                My Letterboxd Account
+              </a>
             </motion.div>
 
             <motion.div
@@ -138,8 +138,8 @@ const AboutPageComponent = (props: Props) => {
               onClick={() => setTab(t)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('w-full h-8 text-nowrap', {
-                'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700':
+              className={cn('hover:text-zinc-500 dark:hover:text-zinc-400 w-full h-8 text-nowrap', {
+                'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-50':
                   tab === t,
               })}
             >

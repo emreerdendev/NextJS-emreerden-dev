@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 import HeadlineComponent from './headline'
 import NavigationComponent from './navigation'
 import ThemeSettingsComponent from './theme-settings'
+import SponsorComponent from './sponsor'
 import SideBarListComponent from '../../components/side-bar-list'
 //
 import { SocialLinks } from '@/constants/side-bar/socials'
@@ -85,6 +86,8 @@ const SideBarLayout = (props: Props) => {
             />
 
             <ThemeSettingsComponent />
+
+            <SponsorComponent />
           </div>
         </div>
       </ClickAwayListener>
