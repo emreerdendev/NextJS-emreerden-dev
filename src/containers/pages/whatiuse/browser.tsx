@@ -11,9 +11,7 @@ import WhatIUseListComponent from '@/components/whatiuse-list';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-type Props = {};
-
-const BrowserPageComponent = (props: Props) => {
+const BrowserPageComponent = () => {
   const [browser, setBrowser] = useState<'Firefox' | 'Chrome'>('Firefox');
   const browsers = ['Firefox', 'Chrome'] as const;
 

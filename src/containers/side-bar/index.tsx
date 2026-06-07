@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-//
-import { useWindowSize } from '@uidotdev/usehooks'
 //
 import { cn } from '@/lib/utils'
 //
@@ -18,21 +16,18 @@ import { ContactLinks } from '@/constants/side-bar/contact'
 //
 import { ClickAwayListener } from '@/components/helpers/click-away-listener'
 
-type Props = {}
-
-const SideBarLayout = (props: Props) => {
+const SideBarLayout = () => {
   const pathname = usePathname()
 
-  const { width } = useWindowSize()
-
   const [isActive, setIsActive] = useState(false)
-  const handleOnClick = () => setIsActive(!isActive)
+  const handleOnClick = () => setIsActive((prev) => !prev)
   const activeClass = isActive && 'active'
 
+  // Close the mobile menu whenever the route changes. On desktop the sidebar
+  // is statically visible (mdl:translate-x-0), so this only affects mobile.
   useEffect(() => {
-    if (width && width < 896) {
-      setIsActive(false)
-    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsActive(false)
   }, [pathname])
 
   return (
@@ -42,24 +37,31 @@ const SideBarLayout = (props: Props) => {
         className="ClickAwayListener"
       >
         <div className="Mobile-Menu z-40 absolute top-0 left-0 h-12 w-full bg-zinc-50 dark:bg-zinc-800 border-b dark:border-zinc-700 mdl:hidden overflow-hidden">
-          <svg
-            className={cn(
-              'Hamburger-Menu Menu-Rotate Ham-Menu w-12 h-12 ml-auto block mdl:hidden',
-              activeClass
-            )}
-            viewBox="0 0 100 100"
+          <button
+            type="button"
             onClick={handleOnClick}
+            aria-label={isActive ? 'Close menu' : 'Open menu'}
+            aria-expanded={isActive}
+            className="ml-auto block mdl:hidden"
           >
-            <path
-              className="line top"
-              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-            />
-            <path className="line middle" d="m 30,50 h 40" />
-            <path
-              className="line bottom"
-              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-            />
-          </svg>
+            <svg
+              className={cn(
+                'Hamburger-Menu Menu-Rotate Ham-Menu w-12 h-12',
+                activeClass
+              )}
+              viewBox="0 0 100 100"
+            >
+              <path
+                className="line top"
+                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+              />
+              <path className="line middle" d="m 30,50 h 40" />
+              <path
+                className="line bottom"
+                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+              />
+            </svg>
+          </button>
         </div>
 
         <div

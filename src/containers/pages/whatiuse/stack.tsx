@@ -5,9 +5,7 @@ import { Stack } from '@/constants/pages/whatiuse/stack';
 import PageHeaderComponent from '@/components/page-header';
 import WhatIUseListComponent from '@/components/whatiuse-list';
 
-type Props = {};
-
-const StackPageComponent = (props: Props) => {
+const StackPageComponent = () => {
   return (
     <main className="Stack Page">
       <div className="Page-Content">

@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Emre Erden's Browser Extensions",
 };
 
-type Props = {};
-
-const VSCodePage = (props: Props) => {
+const VSCodePage = () => {
   return <BrowserComponent />;
 };
 

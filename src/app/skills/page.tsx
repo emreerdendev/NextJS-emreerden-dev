@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Emre Erden's Skills",
 }
 
-type Props = {}
-
-const SkillsPage = (props: Props) => {
+const SkillsPage = () => {
   return <SkillsComponent />
 }
 

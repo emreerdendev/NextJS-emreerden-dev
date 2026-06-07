@@ -16,15 +16,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import SideBarExternalLink from '@/components/side-bar-external-link';
 //
 import { MdOutlineWorkspaces } from 'react-icons/md';
 import { LuUtilityPole } from 'react-icons/lu';
 import { TbFileCv } from 'react-icons/tb';
-import { MdArrowOutward } from 'react-icons/md';
 
-type Props = {};
-
-const NavigationComponent = (props: Props) => {
+const NavigationComponent = () => {
   const pathname = usePathname();
 
   const defaultAccordion = () => {
@@ -147,29 +145,13 @@ const NavigationComponent = (props: Props) => {
           </AccordionItem>
         </Accordion>
 
-        <a
+        <SideBarExternalLink
           href="https://flowcv.com/resume/l3ncgjown0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="Side-Bar-Card group flex items-center justify-between"
-        >
-          <div className="Side-Bar-Card-Hover group-hover:ml-2 flex items-center justify-between">
-            <div className="text-xl -ml-px">
-              <TbFileCv />
-            </div>
-            View CV
-          </div>
-
-          <div className="flex gap-x-2 items-center">
-            <div className="text-zinc-600 dark:text-zinc-400 text-xs">
-              FlowCV
-            </div>
-
-            <div className="text-base">
-              <MdArrowOutward />
-            </div>
-          </div>
-        </a>
+          icon={<TbFileCv />}
+          iconClassName="-ml-px text-xl"
+          label="View CV"
+          meta="FlowCV"
+        />
       </div>
     </div>
   );

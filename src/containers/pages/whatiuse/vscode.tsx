@@ -5,9 +5,7 @@ import { VSCode } from '@/constants/pages/whatiuse/vscode';
 import PageHeaderComponent from '@/components/page-header';
 import WhatIUseListComponent from '@/components/whatiuse-list';
 
-type Props = {};
-
-const VSCodePageComponent = (props: Props) => {
+const VSCodePageComponent = () => {
   return (
     <main className="VSCode-Extensions Page">
       <div className="Page-Content">

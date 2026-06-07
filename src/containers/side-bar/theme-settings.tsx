@@ -9,16 +9,20 @@ import { useTheme } from 'next-themes'
 import { IoMoonOutline } from 'react-icons/io5'
 import { IoSunnyOutline } from 'react-icons/io5'
 
-type Props = {}
-
-const ThemeSettingsComponent = (props: Props) => {
+const ThemeSettingsComponent = () => {
   const { theme, setTheme } = useTheme()
 
-  const [themeValue, setThemeValue] = useState<string>()
+  // Avoid a hydration mismatch: the resolved theme is only known on the client,
+  // so we don't highlight the active option until after mount.
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setThemeValue(theme)
-  }, [theme])
+    // Mount-once flag for the hydration guard; runs a single render on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+  }, [])
+
+  const themeValue = mounted ? theme : undefined
 
   return (
     <div className="Theme-Settings">

@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const HeadlineComponent = (props: Props) => {
+const HeadlineComponent = () => {
   return (
     <div className="Headline">
       <div className="Side-Bar-Title">Headline</div>

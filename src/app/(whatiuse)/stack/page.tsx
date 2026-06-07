@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Emre Erden's Stack",
 };
 
-type Props = {};
-
-const StackPage = (props: Props) => {
+const StackPage = () => {
   return <StackPageComponent />;
 };
 

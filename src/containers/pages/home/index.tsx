@@ -9,9 +9,7 @@ import ExperienceComponent from './experience'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Skeleton } from '@/components/ui/skeleton'
 
-type Props = {}
-
-const HomePageComponent = (props: Props) => {
+const HomePageComponent = () => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -66,7 +64,7 @@ const HomePageComponent = (props: Props) => {
                 transition={{ duration: 0.2, delay: 4 * 0.1 }}
                 className="-mt-0.5 text-xl mdl:text-2xl font-semibold flex items-baseline gap-x-1.5"
               >
-                I'm
+                I&apos;m
                 <div className="font-Caveat text-3xl sm:text-4xl">
                   Emre Erden,
                 </div>
@@ -95,8 +93,8 @@ const HomePageComponent = (props: Props) => {
             transition={{ duration: 0.2, delay: 6 * 0.1 }}
             className="max-w-[600px] leading-7"
           >
-            I'm working to become an experienced developer in the Software
-            Development field. In this profession, I'm open to learning and
+            I&apos;m working to become an experienced developer in the Software
+            Development field. In this profession, I&apos;m open to learning and
             improving myself. And I enjoy learning new things. You can contact
             me to meet!
           </motion.p>

@@ -18,9 +18,7 @@ import EventCardComponent from './about-me/event-card';
 
 type AboutTab = 'Education' | 'Certifications' | 'Languages' | 'Events';
 
-type Props = {};
-
-const AboutPageComponent = (props: Props) => {
+const AboutPageComponent = () => {
   const age = calculateAge(new Date('2000-11-09'));
   const [tab, setTab] = useState<AboutTab>('Education');
   const tabs: AboutTab[] = ['Education', 'Certifications', 'Languages', 'Events'];
@@ -43,7 +41,8 @@ const AboutPageComponent = (props: Props) => {
           transition={{ duration: 0.2, delay: 3 * 0.1 }}
           className="text-lg text-center mdl:text-left leading-8"
         >
-          First of all, Hello Mate! My name is Emre and I'm {age} years old. I live
+          First of all, Hello Mate! My name is Emre and I&apos;m {age} years
+          old. I live
           in{' '}
           <a
             href="https://goo.gl/maps/cadu4sCBbzi4B6F98"
@@ -54,8 +53,9 @@ const AboutPageComponent = (props: Props) => {
             Ankara/Turkey
           </a>
           . In the last years of secondary school, my interest in the world of
-          informatics started. I've been learning since then. I'm open to
-          improving myself in this profession and I'm working to become an
+          informatics started. I&apos;ve been learning since then. I&apos;m open
+          to improving myself in this profession and I&apos;m working to become
+          an
           experienced developer.
         </motion.div>
 
@@ -75,8 +75,9 @@ const AboutPageComponent = (props: Props) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 6 * 0.1 }}
             >
-              I love playing computer games since childhood. It's something I
-              can never give up. If you are interested in games, you can check{' '}
+              I love playing computer games since childhood. It&apos;s something
+              I can never give up. If you are interested in games, you can
+              check{' '}
               <a
                 target="_blank"
                 href="https://steamcommunity.com/id/Wiazeph"

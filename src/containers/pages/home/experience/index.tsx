@@ -5,9 +5,7 @@ import { ExperienceData } from '@/constants/pages/home/experience'
 import { calculateTotalExperience } from '@/lib/utils'
 import ExperienceCardComponent from './experience-card'
 
-type Props = {}
-
-const ExperienceComponent = (props: Props) => {
+const ExperienceComponent = () => {
   const totalDuration = calculateTotalExperience(ExperienceData)
 
   return (

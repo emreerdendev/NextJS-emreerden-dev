@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Emre Erden's VSCode Extensions",
 };
 
-type Props = {};
-
-const VSCodePage = (props: Props) => {
+const VSCodePage = () => {
   return <VSCodeComponent />;
 };
 

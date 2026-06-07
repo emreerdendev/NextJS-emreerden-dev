@@ -1,27 +1,42 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 //
 import { motion } from 'framer-motion'
 //
 import PageHeaderComponent from '@/components/page-header'
+import TruncatedTooltip from '@/components/truncated-tooltip'
 import { Button } from '@/components/ui/button'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from '@/components/ui/tooltip'
 //
 import { Gear, Setup, Equipment } from '@/constants/pages/whatiuse/kit'
 //
+import type { Kit } from '@/types/whatiuse'
 import { cn } from '@/lib/utils'
 
-type Props = {}
+const tabs = ['Gear', 'Setup', 'Equipment'] as const
+type Tab = (typeof tabs)[number]
 
-const KitPageComponent = (props: Props) => {
-  const [tab, setTab] = useState<'Gear' | 'Setup' | 'Equipment'>('Gear')
-  const tabs = ['Gear', 'Setup', 'Equipment'] as const
+const tabData: Record<Tab, Kit[]> = {
+  Gear,
+  Setup,
+  Equipment,
+}
+
+const KitRow = ({ item }: { item: Kit }) => {
+  return (
+    <div className="flex h-11 w-full items-center gap-x-4 border-b px-4 text-sm text-zinc-950 last:border-b-0 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-800">
+      <div className="flex w-[60%] items-center gap-x-2">
+        <span className="text-nowrap">{item.name.title} </span>
+        <span className="text-zinc-500 dark:text-zinc-500">{'>'}</span>{' '}
+        <TruncatedTooltip text={item.name.specs} />
+      </div>
+      <div className="w-1/3">{item.description}</div>
+    </div>
+  )
+}
+
+const KitPageComponent = () => {
+  const [tab, setTab] = useState<Tab>('Gear')
 
   return (
     <main className="Kit Page">
@@ -35,7 +50,7 @@ const KitPageComponent = (props: Props) => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 4 * 0.1 }}
-          className="flex border rounded-md p-1 w-full max-w-72 bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-700"
+          className="flex w-full max-w-72 rounded-md border bg-zinc-100 p-1 dark:border-zinc-700 dark:bg-zinc-800"
         >
           {tabs.map((b) => (
             <Button
@@ -43,7 +58,7 @@ const KitPageComponent = (props: Props) => {
               onClick={() => setTab(b)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('w-full h-8', {
+              className={cn('h-8 w-full', {
                 'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700':
                   tab === b,
               })}
@@ -57,73 +72,17 @@ const KitPageComponent = (props: Props) => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 5 * 0.1 }}
-          className="overflow-auto w-full"
+          className="w-full overflow-auto"
         >
-          <div className="min-w-max border dark:border-zinc-700 w-full rounded-lg ">
-            <div className="w-full h-11 border-b dark:border-zinc-700 flex items-center  text-zinc-500 dark:text-zinc-500 text-xs px-4 select-none gap-x-4">
+          <div className="w-full min-w-max rounded-lg border dark:border-zinc-700">
+            <div className="flex h-11 w-full select-none items-center gap-x-4 border-b px-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-500">
               <div className="w-[60%]">Name/Specs</div>
               <div className="w-1/3">Description</div>
             </div>
 
-            {tab === 'Gear'
-              ? Gear.map((g) => (
-                  <div className="w-full h-11 border-b last:border-b-0 dark:border-zinc-700 flex items-center text-zinc-950 dark:text-zinc-50 text-sm px-4 hover:bg-zinc-100 dark:hover:bg-zinc-800 gap-x-4">
-                    <div className="flex items-center gap-x-2 w-[60%]">
-                      <span className="text-nowrap">{g.name.title} </span>
-                      <span className="text-zinc-500 dark:text-zinc-500">
-                        {'>'}
-                      </span>{' '}
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger className="whitespace-nowrap overflow-hidden overflow-ellipsis">
-                            {g.name.specs}
-                          </TooltipTrigger>
-                          <TooltipContent>{g.name.specs}</TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </div>
-                    <div className="w-1/3">{g.description}</div>
-                  </div>
-                ))
-              : tab === 'Setup'
-              ? Setup.map((s) => (
-                  <div className="w-full h-11 border-b last:border-b-0 dark:border-zinc-700 flex items-center text-zinc-950 dark:text-zinc-50 text-sm px-4 hover:bg-zinc-100 dark:hover:bg-zinc-800 gap-x-4">
-                    <div className="flex items-center gap-x-2 w-[60%]">
-                      <span className="text-nowrap">{s.name.title} </span>
-                      <span className="text-zinc-500 dark:text-zinc-500">
-                        {'>'}
-                      </span>{' '}
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger className="whitespace-nowrap overflow-hidden overflow-ellipsis">
-                            {s.name.specs}
-                          </TooltipTrigger>
-                          <TooltipContent>{s.name.specs}</TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </div>
-                    <div className="w-1/3">{s.description}</div>
-                  </div>
-                ))
-              : Equipment.map((e) => (
-                  <div className="w-full h-11 border-b last:border-b-0 dark:border-zinc-700 flex items-center text-zinc-950 dark:text-zinc-50 text-sm px-4 hover:bg-zinc-100 dark:hover:bg-zinc-800 gap-x-4">
-                    <div className="flex items-center gap-x-2 w-[60%]">
-                      <span className="text-nowrap">{e.name.title} </span>
-                      <span className="text-zinc-500 dark:text-zinc-500">
-                        {'>'}
-                      </span>{' '}
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger className="whitespace-nowrap overflow-hidden overflow-ellipsis">
-                            {e.name.specs}
-                          </TooltipTrigger>
-                          <TooltipContent>{e.name.specs}</TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </div>
-                    <div className="w-1/3">{e.description}</div>
-                  </div>
-                ))}
+            {tabData[tab].map((item, index) => (
+              <KitRow key={index} item={item} />
+            ))}
           </div>
         </motion.div>
       </div>

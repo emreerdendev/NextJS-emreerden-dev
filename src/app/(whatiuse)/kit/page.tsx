@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   description: "Emre Erden's Kit",
 };
 
-type Props = {};
-
-const KitPage = (props: Props) => {
+const KitPage = () => {
   return <KitComponent />;
 };
 

@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
 //
 import { GoLink } from 'react-icons/go'
 //
@@ -25,7 +28,13 @@ const ExperienceCardComponent = (props: Experience) => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <img src={props.icon} alt={props.name} className="w-6 h-6" />
+            <Image
+              src={props.icon}
+              alt={props.name}
+              width={24}
+              height={24}
+              className="h-6 w-6"
+            />
 
             <a
               href={props.path}

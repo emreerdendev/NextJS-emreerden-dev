@@ -1,6 +1,6 @@
 import React from 'react'
 //
-import { MdArrowOutward } from 'react-icons/md'
+import SideBarExternalLink from '@/components/side-bar-external-link'
 
 type Props = {
   name: string
@@ -19,21 +19,12 @@ const SideBarListComponent = (props: Props) => {
 
       <div className={`${props.name}-List Side-Bar-Card-List`}>
         {props.constName.map((item, index) => (
-          <a
-            href={item.path}
-            target="_blank"
-            rel="noopener noreferrer"
+          <SideBarExternalLink
             key={index}
-            className="Side-Bar-Card group flex items-center justify-between"
-          >
-            <div className="Side-Bar-Card-Hover group-hover:ml-2">
-              {item.icon}
-
-              <div className="text-sm">{item.name}</div>
-            </div>
-
-            <MdArrowOutward />
-          </a>
+            href={item.path}
+            icon={item.icon}
+            label={item.name}
+          />
         ))}
       </div>
     </div>

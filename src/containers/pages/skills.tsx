@@ -8,9 +8,7 @@ import { Skills } from '@/constants/pages/skills';
 //
 import PageHeaderComponent from '../../components/page-header';
 
-type Props = {};
-
-const SkillsPageComponent = (props: Props) => {
+const SkillsPageComponent = () => {
   return (
     <main className="Skills Page">
       <div className="Page-Content">
