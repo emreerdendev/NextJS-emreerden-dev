@@ -1,4 +1,4 @@
-import { GrProjects, GrResources } from 'react-icons/gr'
+import { GrProjects } from 'react-icons/gr'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
 export const PortfolioRoutes = [
@@ -6,11 +6,6 @@ export const PortfolioRoutes = [
     name: 'Projects',
     path: '/projects',
     icon: <GrProjects />,
-  },
-  {
-    name: 'Resources',
-    path: '/resources',
-    icon: <GrResources />,
   },
   {
     name: 'Studies',

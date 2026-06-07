@@ -76,8 +76,6 @@ const NavigationComponent = (props: Props) => {
                 <div className="absolute left-[9px] top-[11px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
                 <div className="absolute left-[9px] top-[52px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
-
-                <div className="absolute left-[9px] top-[92px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
               </div>
 
               <div className="Portfolio-Routes-List Side-Bar-Card-List p-0 mt-1 w-full">
@@ -93,9 +91,7 @@ const NavigationComponent = (props: Props) => {
                     )}
                   >
                     <div className="Side-Bar-Card-Hover group-hover:ml-2">
-                      <div className={cn(index === 1 && 'text-lg -mx-px')}>
-                        {route.icon}
-                      </div>
+                      <div>{route.icon}</div>
 
                       {route.name}
                     </div>

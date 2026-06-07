@@ -65,7 +65,7 @@ export const Skills: SkillsType[] = [
   {
     name: 'Shopify',
     description: 'Remix, Extensions',
-    path: 'https://supabase.com/',
+    path: 'https://www.shopify.com/',
     icon: <FaShopify />,
   },
   {
