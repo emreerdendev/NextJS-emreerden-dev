@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import React from 'react'
+//
+import { getRepos } from '@/lib/github'
 //
 import ProjectsPageComponent from '@/containers/pages/portfolio/projects'
 
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
   description: "Emre Erden's Projects",
 }
 
-type Props = {}
+const ProjectsPage = async () => {
+  const repos = await getRepos('project').catch(() => [])
 
-const ProjectsPage = (props: Props) => {
-  return <ProjectsPageComponent />
+  return <ProjectsPageComponent repos={repos} />
 }
 
 export default ProjectsPage
