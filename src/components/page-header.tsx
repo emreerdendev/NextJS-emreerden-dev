@@ -25,9 +25,9 @@ const PageHeaderComponent = (props: Props) => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: 3 * 0.1 }}
-        className="flex flex-col sm:flex-row items-center justify-center mdl:justify-start sm:flex-wrap gap-2 text-center mdl:text-left"
+        className="flex flex-col items-center justify-center gap-2 text-center sm:flex-row sm:flex-wrap mdl:justify-start mdl:text-left"
       >
-        <div className="text-zinc-400 text-sm select-none mdl:hidden lg:block">
+        <div className="select-none text-sm text-zinc-400 mdl:hidden lg:block">
           {'<span>'}
         </div>
 
@@ -35,7 +35,7 @@ const PageHeaderComponent = (props: Props) => {
           {props.pageDescription}
         </div>
 
-        <div className="text-zinc-400 text-sm select-none mdl:hidden lg:block">
+        <div className="select-none text-sm text-zinc-400 mdl:hidden lg:block">
           {'</span>'}
         </div>
       </motion.div>

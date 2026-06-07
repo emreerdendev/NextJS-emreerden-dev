@@ -23,30 +23,30 @@ const PortfolioListComponent = (props: Props) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 4 * 0.1 }}
           key={index}
-          className="Repo-Card h-66 w-76 sm:h-68 sm:w-80 md:h-72 md:w-88 mdl:h-68 lg:h-52 lg:w-full lg:flex rounded-md shadow-sm lg:shadow-none overflow-hidden relative group"
+          className="Repo-Card group relative h-66 w-76 overflow-hidden rounded-md shadow-sm sm:h-68 sm:w-80 md:h-72 md:w-88 mdl:h-68 lg:flex lg:h-52 lg:w-full lg:shadow-none"
         >
-          <div className="Repo-Image relative z-10 lg:z-0 w-full lg:w-2/5 h-full group-hover:blur-sm group-hover:scale-125 lg:group-hover:blur-none lg:group-hover:scale-100 transition-all duration-300 select-none rounded-md border lg:border-l lg:border-y lg:border-r-0 dark:border-zinc-800 lg:rounded-tl-md lg:rounded-bl-md lg:rounded-tr-none lg:rounded-br-none">
+          <div className="Repo-Image relative z-10 h-full w-full select-none rounded-md border transition-all duration-300 group-hover:scale-125 group-hover:blur-sm dark:border-zinc-800 lg:z-0 lg:w-2/5 lg:rounded-bl-md lg:rounded-br-none lg:rounded-tl-md lg:rounded-tr-none lg:border-y lg:border-l lg:border-r-0 lg:group-hover:scale-100 lg:group-hover:blur-none">
             <Image
               src={repo.img}
               alt={repo.name}
               fill
               sizes="100%"
-              className="object-cover rounded-md lg:rounded-tl-md lg:rounded-bl-md lg:rounded-tr-none lg:rounded-br-none"
+              className="rounded-md object-cover lg:rounded-bl-md lg:rounded-br-none lg:rounded-tl-md lg:rounded-tr-none"
             />
           </div>
 
-          <div className="relative z-20 lg:z-0 group-hover:-translate-y-full lg:group-hover:-translate-y-0 transition-transform duration-300 w-full lg:w-3/5 bg-zinc-50 dark:bg-zinc-800 border-x lg:border-x-0 lg:border-r border-b lg:border-t dark:border-zinc-800 group">
-            <div className="Repo-Information opacity-0 lg:opacity-100 group-hover:opacity-100 transition-opacity duration-300 pt-4 pb-2 lg:pb-4 px-2 lg:px-6 flex flex-col gap-y-6 lg:gap-y-4 text-center lg:text-left lg:h-full lg:justify-center">
+          <div className="group relative z-20 w-full border-x border-b bg-zinc-50 transition-transform duration-300 group-hover:-translate-y-full dark:border-zinc-800 dark:bg-zinc-800 lg:z-0 lg:w-3/5 lg:border-x-0 lg:border-r lg:border-t lg:group-hover:-translate-y-0">
+            <div className="Repo-Information flex flex-col gap-y-6 px-2 pb-2 pt-4 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:h-full lg:justify-center lg:gap-y-4 lg:px-6 lg:pb-4 lg:text-left lg:opacity-100">
               <div className="Repo-Name lg:font-medium">{repo.name}</div>
 
               <div className="Repo-Description text-sm">{repo.desc}</div>
 
-              <div className="flex justify-center lg:justify-start gap-x-2 lg:gap-x-4 text-sm select-none">
+              <div className="flex select-none justify-center gap-x-2 text-sm lg:justify-start lg:gap-x-4">
                 <a
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="Main-Border-Color py-2 px-2 flex items-center gap-x-1.5 rounded-md"
+                  className="Main-Border-Color flex items-center gap-x-1.5 rounded-md px-2 py-2"
                 >
                   <FiGithub />
 
@@ -57,7 +57,7 @@ const PortfolioListComponent = (props: Props) => {
 
                     <div className="">Star</div>
 
-                    <div className="rounded-full bg-zinc-200 dark:bg-zinc-700 px-[7px] pt-[3px] pb-0.5 leading-4">
+                    <div className="rounded-full bg-zinc-200 px-[7px] pb-0.5 pt-[3px] leading-4 dark:bg-zinc-700">
                       {repo.stars}
                     </div>
                   </div>
@@ -67,7 +67,7 @@ const PortfolioListComponent = (props: Props) => {
                   href={repo.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="Main-Border-Color py-2 px-2 flex items-center gap-x-1.5 rounded-md"
+                  className="Main-Border-Color flex items-center gap-x-1.5 rounded-md px-2 py-2"
                 >
                   <IoLogoVercel />
 

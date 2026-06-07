@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 //
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 //
-import { Skills } from '@/constants/pages/skills';
+import { Skills } from '@/constants/pages/skills'
 //
-import PageHeaderComponent from '../../components/page-header';
+import PageHeaderComponent from '../../components/page-header'
 
 const SkillsPageComponent = () => {
   return (
@@ -31,12 +31,16 @@ const SkillsPageComponent = () => {
                 rel="noopener noreferrer"
                 className="Main-Card"
               >
-                {skill?.icon && <div className="text-2xl shrink-0">{skill.icon}</div>}
+                {skill?.icon && (
+                  <div className="shrink-0 text-2xl">{skill.icon}</div>
+                )}
 
                 <div>
                   <div className="text-sm">{skill.name}</div>
                   {skill.description && (
-                    <div className="text-[10px] opacity-60">{skill.description}</div>
+                    <div className="text-[10px] opacity-60">
+                      {skill.description}
+                    </div>
                   )}
                 </div>
               </a>
@@ -45,7 +49,7 @@ const SkillsPageComponent = () => {
         </ul>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default SkillsPageComponent;
+export default SkillsPageComponent

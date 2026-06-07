@@ -9,17 +9,17 @@ const ExperienceComponent = () => {
   const totalDuration = calculateTotalExperience(ExperienceData)
 
   return (
-    <div className="flex flex-col gap-y-8 mx-auto mdl:mx-0">
+    <div className="mx-auto flex flex-col gap-y-8 mdl:mx-0">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: 7 * 0.1 }}
         className="flex items-center gap-x-1.5"
       >
-        <div className="text-xl text-center mdl:text-left font-medium">
+        <div className="text-center text-xl font-medium mdl:text-left">
           Experience
         </div>
-        <span className="hover:scale-105 transition-transform border cursor-default dark:border-zinc-700 py-1.5 px-2 rounded-md text-[11px] leading-none dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-400">
+        <span className="cursor-default rounded-md border px-2 py-1.5 text-[11px] leading-none text-zinc-500 transition-transform hover:scale-105 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400">
           {totalDuration}
         </span>
       </motion.div>
@@ -28,7 +28,7 @@ const ExperienceComponent = () => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: 8 * 0.1 }}
-        className="flex flex-col border-l dark:border-zinc-600 ml-2"
+        className="ml-2 flex flex-col border-l dark:border-zinc-600"
       >
         {ExperienceData.slice()
           .reverse()

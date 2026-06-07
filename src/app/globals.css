@@ -4,35 +4,35 @@
 
 @layer base {
   body {
-    @apply mdl:flex bg-white dark:bg-zinc-900 text-zinc-950 dark:text-zinc-200;
+    @apply bg-white text-zinc-950 dark:bg-zinc-900 dark:text-zinc-200 mdl:flex;
   }
 }
 
 @layer components {
   /* Side-Bar */
   .Side-Bar-Card {
-    @apply -mx-3 px-3 py-2 rounded-md Main-Hover-Color;
+    @apply Main-Hover-Color -mx-3 rounded-md px-3 py-2;
   }
   /* Side-Bar */
 
   /* Pages */
   .Main-Card {
-    @apply Main-Border-Color px-4 w-48 lgx:w-50 xl:w-52 min-h-14 py-2 flex items-center justify-center text-center gap-2.5 rounded-md shadow-sm;
+    @apply Main-Border-Color flex min-h-14 w-48 items-center justify-center gap-2.5 rounded-md px-4 py-2 text-center shadow-sm lgx:w-50 xl:w-52;
   }
   /* Pages */
 }
 
 @layer utilities {
   .Main-Hover-Color {
-    @apply hover:bg-zinc-200/70 dark:hover:bg-zinc-700 transition-colors;
+    @apply transition-colors hover:bg-zinc-200/70 dark:hover:bg-zinc-700;
   }
   .Main-Border-Color {
-    @apply border dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 transition-colors;
+    @apply border transition-colors hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-500;
   }
 
   /* Side-Bar */
   .Side-Bar-Title {
-    @apply pb-4 text-xs text-zinc-600 dark:text-zinc-400 tracking-wide;
+    @apply pb-4 text-xs tracking-wide text-zinc-600 dark:text-zinc-400;
   }
   .Side-Bar-Card-List {
     @apply flex flex-col gap-y-1;
@@ -44,16 +44,16 @@
 
   /* Pages */
   .Page {
-    @apply w-full h-full min-h-dvh max-h-dvh overflow-y-auto;
+    @apply h-full max-h-dvh min-h-dvh w-full overflow-y-auto;
   }
   .Page-Content {
-    @apply w-full max-w-[780px] mx-auto pt-18 pb-12 mdl:py-14 lg:py-18 lgx:py-22 xl:py-30 px-6 md:px-8 mdl:px-12 flex flex-col gap-y-8 sm:gap-y-9 md:gap-y-10 mdl:gap-y-11 lg:gap-y-12;
+    @apply mx-auto flex w-full max-w-[780px] flex-col gap-y-8 px-6 pb-12 pt-18 sm:gap-y-9 md:gap-y-10 md:px-8 mdl:gap-y-11 mdl:px-12 mdl:py-14 lg:gap-y-12 lg:py-18 lgx:py-22 xl:py-30;
   }
   .Page-Title {
-    @apply text-4xl lg:text-5xl text-center mdl:text-left font-bold tracking-[-2px];
+    @apply text-center text-4xl font-bold tracking-[-2px] mdl:text-left lg:text-5xl;
   }
   .Main-Card-List {
-    @apply flex flex-wrap items-center mdl:items-start justify-center mdl:justify-normal gap-4 lg:gap-6;
+    @apply flex flex-wrap items-center justify-center gap-4 mdl:items-start mdl:justify-normal lg:gap-6;
   }
   /* Pages */
 }
@@ -83,7 +83,9 @@
 }
 .line {
   fill: none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition:
+    stroke-dasharray 400ms,
+    stroke-dashoffset 400ms;
   stroke: currentColor;
   stroke-width: 5.5;
   stroke-linecap: round;
@@ -99,7 +101,9 @@
 .Ham-Menu .bottom {
   stroke-dasharray: 40 85;
   transform-origin: 50%;
-  transition: transform 400ms, stroke-dashoffset 400ms;
+  transition:
+    transform 400ms,
+    stroke-dashoffset 400ms;
 }
 .Ham-Menu.active .top {
   stroke-dashoffset: -64px;

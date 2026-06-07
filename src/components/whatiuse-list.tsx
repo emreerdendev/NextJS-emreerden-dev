@@ -1,20 +1,20 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React from 'react'
 //
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 //
-import { WhatIUse } from '@/types/whatiuse';
+import { WhatIUse } from '@/types/whatiuse'
 //
-import { FaFirefoxBrowser, FaChrome } from 'react-icons/fa6';
-import { IoEarth } from 'react-icons/io5';
-import { cn } from '@/lib/utils';
+import { FaFirefoxBrowser, FaChrome } from 'react-icons/fa6'
+import { IoEarth } from 'react-icons/io5'
+import { cn } from '@/lib/utils'
 
 type Props = {
-  name: string;
-  constName: WhatIUse[];
-  browser?: 'Firefox' | 'Chrome';
-};
+  name: string
+  constName: WhatIUse[]
+  browser?: 'Firefox' | 'Chrome'
+}
 
 const WhatIUseListComponent = (props: Props) => {
   const filteredItems =
@@ -25,17 +25,17 @@ const WhatIUseListComponent = (props: Props) => {
             props.browser &&
             item.browser.includes(props.browser)
         )
-      : props.constName;
+      : props.constName
 
   const links = [
     { key: 'website', icon: IoEarth },
     { key: 'firefox', icon: FaFirefoxBrowser },
     { key: 'chrome', icon: FaChrome },
-  ];
+  ]
 
   return (
     <ul
-      className={`${props.name}-List flex flex-wrap justify-center mdl:justify-normal gap-4`}
+      className={`${props.name}-List flex flex-wrap justify-center gap-4 mdl:justify-normal`}
     >
       {filteredItems.map((item, index) => (
         <motion.li
@@ -44,7 +44,7 @@ const WhatIUseListComponent = (props: Props) => {
           transition={{ duration: 0.2, delay: 5 * 0.1 }}
           key={index}
           className={cn({
-            'Main-Card text-sm flex-col h-22': typeof item.path !== 'string',
+            'Main-Card h-22 flex-col text-sm': typeof item.path !== 'string',
           })}
         >
           {typeof item.path === 'string' ? (
@@ -70,9 +70,9 @@ const WhatIUseListComponent = (props: Props) => {
                         }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-zinc-500 dark:hover:text-zinc-500 transition-colors"
+                        className="transition-colors hover:text-zinc-500 dark:hover:text-zinc-500"
                       >
-                        <link.icon className="w-4 h-4" />
+                        <link.icon className="h-4 w-4" />
                       </a>
                     )
                 )}
@@ -82,7 +82,7 @@ const WhatIUseListComponent = (props: Props) => {
         </motion.li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default WhatIUseListComponent;
+export default WhatIUseListComponent

@@ -1,4 +1,4 @@
-import { WhatIUse } from '@/types/whatiuse';
+import { WhatIUse } from '@/types/whatiuse'
 
 export const VSCode: WhatIUse[] = [
   {
@@ -157,4 +157,4 @@ export const VSCode: WhatIUse[] = [
     name: 'Prisma ',
     path: 'https://marketplace.visualstudio.com/items?itemName=Prisma.prisma',
   },
-];
+]

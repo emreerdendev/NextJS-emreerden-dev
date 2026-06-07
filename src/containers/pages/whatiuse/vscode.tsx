@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 //
-import { VSCode } from '@/constants/pages/whatiuse/vscode';
+import { VSCode } from '@/constants/pages/whatiuse/vscode'
 //
-import PageHeaderComponent from '@/components/page-header';
-import WhatIUseListComponent from '@/components/whatiuse-list';
+import PageHeaderComponent from '@/components/page-header'
+import WhatIUseListComponent from '@/components/whatiuse-list'
 
 const VSCodePageComponent = () => {
   return (
@@ -17,7 +17,7 @@ const VSCodePageComponent = () => {
         <WhatIUseListComponent name="VSCode" constName={VSCode} />
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default VSCodePageComponent;
+export default VSCodePageComponent

@@ -1,4 +1,4 @@
-import { WhatIUse } from '@/types/whatiuse';
+import { WhatIUse } from '@/types/whatiuse'
 
 export const Browser: WhatIUse[] = [
   {
@@ -305,4 +305,4 @@ export const Browser: WhatIUse[] = [
     },
     browser: ['Firefox', 'Chrome'],
   },
-];
+]

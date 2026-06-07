@@ -1,39 +1,39 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 //
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 //
-import { Routes } from '@/constants/routes';
-import { PortfolioRoutes } from '@/constants/routes/portfolio-routes';
-import { WhatIUseRoutes } from '@/constants/routes/whatiuse-routes';
+import { Routes } from '@/constants/routes'
+import { PortfolioRoutes } from '@/constants/routes/portfolio-routes'
+import { WhatIUseRoutes } from '@/constants/routes/whatiuse-routes'
 //
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import SideBarExternalLink from '@/components/side-bar-external-link';
+} from '@/components/ui/accordion'
+import SideBarExternalLink from '@/components/side-bar-external-link'
 //
-import { MdOutlineWorkspaces } from 'react-icons/md';
-import { LuUtilityPole } from 'react-icons/lu';
-import { TbFileCv } from 'react-icons/tb';
+import { MdOutlineWorkspaces } from 'react-icons/md'
+import { LuUtilityPole } from 'react-icons/lu'
+import { TbFileCv } from 'react-icons/tb'
 
 const NavigationComponent = () => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   const defaultAccordion = () => {
     if (PortfolioRoutes.some((route) => route.path === pathname)) {
-      return 'item-1';
+      return 'item-1'
     } else if (WhatIUseRoutes.some((route) => route.path === pathname)) {
-      return 'item-2';
+      return 'item-2'
     } else {
-      return '';
+      return ''
     }
-  };
+  }
 
   return (
     <div className="Navigation text-sm">
@@ -60,8 +60,8 @@ const NavigationComponent = () => {
         </nav>
 
         <Accordion type="single" collapsible defaultValue={defaultAccordion()}>
-          <AccordionItem value="item-1" className="border-none mb-1">
-            <AccordionTrigger className="Side-Bar-Card font-normal hover:no-underline py-2">
+          <AccordionItem value="item-1" className="mb-1 border-none">
+            <AccordionTrigger className="Side-Bar-Card py-2 font-normal hover:no-underline">
               <div className="flex items-center gap-x-2">
                 <div className="text-lg">
                   <MdOutlineWorkspaces />
@@ -70,19 +70,19 @@ const NavigationComponent = () => {
               </div>
             </AccordionTrigger>
             <AccordionContent className="flex pb-1">
-              <div className="relative w-[34px] before:content-[''] before:block before:absolute before:top-2 before:left-[9px] before:w-0.5 before:h-[calc(100%-30px)] before:bg-zinc-200 dark:before:bg-zinc-700 before:z-10 shrink-0">
-                <div className="absolute left-[9px] top-[11px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+              <div className="relative w-[34px] shrink-0 before:absolute before:left-[9px] before:top-2 before:z-10 before:block before:h-[calc(100%-30px)] before:w-0.5 before:bg-zinc-200 before:content-[''] dark:before:bg-zinc-700">
+                <div className="absolute left-[9px] top-[11px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[48px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[48px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
               </div>
 
-              <div className="Portfolio-Routes-List Side-Bar-Card-List p-0 mt-1 w-full">
+              <div className="Portfolio-Routes-List Side-Bar-Card-List mt-1 w-full p-0">
                 {PortfolioRoutes.map((route, index) => (
                   <Link
                     key={index}
                     href={route.path}
                     className={cn(
-                      'px-3 py-2 rounded-md Main-Hover-Color group',
+                      'Main-Hover-Color group rounded-md px-3 py-2',
                       pathname === route.path
                         ? 'bg-zinc-200/70 dark:bg-zinc-700'
                         : ''
@@ -100,7 +100,7 @@ const NavigationComponent = () => {
           </AccordionItem>
 
           <AccordionItem value="item-2" className="border-none">
-            <AccordionTrigger className="Side-Bar-Card font-normal hover:no-underline py-2">
+            <AccordionTrigger className="Side-Bar-Card py-2 font-normal hover:no-underline">
               <div className="flex items-center gap-x-2">
                 <div className="text-lg">
                   <LuUtilityPole />
@@ -109,25 +109,25 @@ const NavigationComponent = () => {
               </div>
             </AccordionTrigger>
             <AccordionContent className="flex pb-1">
-              <div className="relative w-[34px] before:content-[''] before:block before:absolute before:top-2 before:left-[9px] before:w-0.5 before:h-[calc(100%-30px)] before:bg-zinc-200 dark:before:bg-zinc-700 before:z-10 shrink-0">
-                <div className="absolute left-[9px] top-[8px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+              <div className="relative w-[34px] shrink-0 before:absolute before:left-[9px] before:top-2 before:z-10 before:block before:h-[calc(100%-30px)] before:w-0.5 before:bg-zinc-200 before:content-[''] dark:before:bg-zinc-700">
+                <div className="absolute left-[9px] top-[8px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[48px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[48px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[88px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[88px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[128px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[128px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
 
-                <div className="absolute left-[9px] top-[168px] w-4 h-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
+                <div className="absolute left-[9px] top-[168px] h-4 w-4 rounded-bl-md border-b-2 border-l-2 dark:border-zinc-700"></div>
               </div>
 
-              <div className="whatiuse-routes-List Side-Bar-Card-List p-0 mt-1 w-full">
+              <div className="whatiuse-routes-List Side-Bar-Card-List mt-1 w-full p-0">
                 {WhatIUseRoutes.map((route, index) => (
                   <Link
                     key={index}
                     href={route.path}
                     className={cn(
-                      'px-3 py-2 rounded-md Main-Hover-Color group',
+                      'Main-Hover-Color group rounded-md px-3 py-2',
                       pathname === route.path
                         ? 'bg-zinc-200/70 dark:bg-zinc-700'
                         : ''
@@ -154,7 +154,7 @@ const NavigationComponent = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavigationComponent;
+export default NavigationComponent

@@ -36,7 +36,7 @@ const SideBarLayout = () => {
         onClickAway={() => setIsActive(false)}
         className="ClickAwayListener"
       >
-        <div className="Mobile-Menu z-40 absolute top-0 left-0 h-12 w-full bg-zinc-50 dark:bg-zinc-800 border-b dark:border-zinc-700 mdl:hidden overflow-hidden">
+        <div className="Mobile-Menu absolute left-0 top-0 z-40 h-12 w-full overflow-hidden border-b bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 mdl:hidden">
           <button
             type="button"
             onClick={handleOnClick}
@@ -46,7 +46,7 @@ const SideBarLayout = () => {
           >
             <svg
               className={cn(
-                'Hamburger-Menu Menu-Rotate Ham-Menu w-12 h-12',
+                'Hamburger-Menu Menu-Rotate Ham-Menu h-12 w-12',
                 activeClass
               )}
               viewBox="0 0 100 100"
@@ -66,11 +66,11 @@ const SideBarLayout = () => {
 
         <div
           className={cn(
-            'Side-Bar Menu z-50 absolute top-12 mdl:static -translate-x-full mdl:translate-x-0 h-[calc(100dvh-48px)] mdl:h-dvh transition-transform duration-300 ease-in-out',
+            'Side-Bar Menu absolute top-12 z-50 h-[calc(100dvh-48px)] -translate-x-full transition-transform duration-300 ease-in-out mdl:static mdl:h-dvh mdl:translate-x-0',
             isActive && 'translate-x-0'
           )}
         >
-          <div className="w-72 min-w-72 h-full border-r dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex flex-col gap-y-8 p-6 overflow-y-auto no-scrollbar">
+          <div className="no-scrollbar flex h-full w-72 min-w-72 flex-col gap-y-8 overflow-y-auto border-r bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-800">
             <HeadlineComponent />
 
             <NavigationComponent />

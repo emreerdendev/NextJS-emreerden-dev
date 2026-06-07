@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 //
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 //
-import { Browser } from '@/constants/pages/whatiuse/browser';
+import { Browser } from '@/constants/pages/whatiuse/browser'
 //
-import PageHeaderComponent from '@/components/page-header';
-import WhatIUseListComponent from '@/components/whatiuse-list';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import PageHeaderComponent from '@/components/page-header'
+import WhatIUseListComponent from '@/components/whatiuse-list'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 const BrowserPageComponent = () => {
-  const [browser, setBrowser] = useState<'Firefox' | 'Chrome'>('Firefox');
-  const browsers = ['Firefox', 'Chrome'] as const;
+  const [browser, setBrowser] = useState<'Firefox' | 'Chrome'>('Firefox')
+  const browsers = ['Firefox', 'Chrome'] as const
 
   return (
     <main className="Browser-Extensions Page">
@@ -27,7 +27,7 @@ const BrowserPageComponent = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 4 * 0.1 }}
-          className="flex border rounded-md p-1 w-full max-w-72 bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-700"
+          className="flex w-full max-w-72 rounded-md border bg-zinc-100 p-1 dark:border-zinc-700 dark:bg-zinc-800"
         >
           {browsers.map((b) => (
             <Button
@@ -35,7 +35,7 @@ const BrowserPageComponent = () => {
               onClick={() => setBrowser(b)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('w-full h-8', {
+              className={cn('h-8 w-full', {
                 'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700':
                   browser === b,
               })}
@@ -52,7 +52,7 @@ const BrowserPageComponent = () => {
         />
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default BrowserPageComponent;
+export default BrowserPageComponent

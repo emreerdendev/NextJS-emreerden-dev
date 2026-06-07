@@ -1,6 +1,6 @@
-import { VscTools, VscExtensions } from 'react-icons/vsc';
-import { IoExtensionPuzzleOutline } from 'react-icons/io5';
-import { PiDevices } from 'react-icons/pi';
+import { VscTools, VscExtensions } from 'react-icons/vsc'
+import { IoExtensionPuzzleOutline } from 'react-icons/io5'
+import { PiDevices } from 'react-icons/pi'
 
 export const WhatIUseRoutes = [
   {
@@ -23,4 +23,4 @@ export const WhatIUseRoutes = [
     path: '/vscode-extensions',
     icon: <VscExtensions />,
   },
-];
+]

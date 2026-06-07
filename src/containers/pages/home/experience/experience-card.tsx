@@ -20,9 +20,9 @@ const ExperienceCardComponent = (props: Experience) => {
     }))
   }
   return (
-    <li className="relative max-w-[550px] pt-1 list-none pb-10 last:pb-0 before:content-[''] before:w-4 before:h-4 before:border-2 before:dark:border-zinc-600 before:bg-zinc-100 before:dark:bg-zinc-800 before:rounded-full before:absolute before:-left-[9px] before:top-[6px]">
+    <li className="relative max-w-[550px] list-none pb-10 pt-1 before:absolute before:-left-[9px] before:top-[6px] before:h-4 before:w-4 before:rounded-full before:border-2 before:bg-zinc-100 before:content-[''] last:pb-0 before:dark:border-zinc-600 before:dark:bg-zinc-800">
       <div className="flex flex-col gap-y-4">
-        <div className="flex flex-col gap-y-2 ml-5">
+        <div className="ml-5 flex flex-col gap-y-2">
           <div className="text-sm text-zinc-600 dark:text-zinc-400">
             {props.date} ({calculateDaysBetween(props.date)} days)
           </div>
@@ -40,13 +40,13 @@ const ExperienceCardComponent = (props: Experience) => {
               href={props.path}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors font-medium"
+              className="text-xl font-medium transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
             >
               {props.name}
             </a>
 
-            <div className="flex gap-x-2 items-center">
-              <div className="hidden sm:block text-zinc-600 dark:text-zinc-400">
+            <div className="flex items-center gap-x-2">
+              <div className="hidden text-zinc-600 dark:text-zinc-400 sm:block">
                 -
               </div>
 
@@ -69,13 +69,13 @@ const ExperienceCardComponent = (props: Experience) => {
               .map((project, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-y-6 border ml-5 w-fit dark:border-zinc-800 rounded-md p-5 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors group"
+                  className="group ml-5 flex w-fit flex-col gap-y-6 rounded-md border p-5 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800/50"
                 >
                   <a
                     href={project.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex gap-x-2 items-center hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors w-fit"
+                    className="flex w-fit items-center gap-x-2 transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
                   >
                     <div className="text-base">{project.name}</div>
 
@@ -84,21 +84,21 @@ const ExperienceCardComponent = (props: Experience) => {
                     </div>
                   </a>
 
-                  <div className="text-zinc-600 dark:text-zinc-400 -mt-1 text-sm text-left">
+                  <div className="-mt-1 text-left text-sm text-zinc-600 dark:text-zinc-400">
                     {project.description}
                   </div>
 
                   {project.stack && (
                     <div className="flex flex-col gap-y-3">
-                      <div className="text-xs text-zinc-800 dark:text-zinc-300 w-fit border-b border-zinc-400 dark:border-zinc-400">
+                      <div className="w-fit border-b border-zinc-400 text-xs text-zinc-800 dark:border-zinc-400 dark:text-zinc-300">
                         Tech Stack:
                       </div>
 
-                      <div className="flex gap-2 flex-wrap">
+                      <div className="flex flex-wrap gap-2">
                         {project.stack.map((stack, index) => (
                           <div
                             key={index}
-                            className="group-hover:border-zinc-300 transition-colors border dark:border-zinc-700 px-2.5 py-0.5 h-fit rounded-full text-xs dark:bg-zinc-800/80 group-hover:dark:border-zinc-700"
+                            className="h-fit rounded-full border px-2.5 py-0.5 text-xs transition-colors group-hover:border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800/80 group-hover:dark:border-zinc-700"
                           >
                             {stack}
                           </div>
@@ -109,11 +109,11 @@ const ExperienceCardComponent = (props: Experience) => {
 
                   {project.whatIDid && (
                     <div className="flex flex-col gap-y-3">
-                      <div className="text-xs text-zinc-800 dark:text-zinc-300 w-fit border-b border-zinc-400 dark:border-zinc-400">
+                      <div className="w-fit border-b border-zinc-400 text-xs text-zinc-800 dark:border-zinc-400 dark:text-zinc-300">
                         What i did in this project:
                       </div>
 
-                      <ul className="flex flex-col gap-y-1 list-disc pl-5 text-zinc-600 dark:text-zinc-400 text-sm overflow-hidden transition-all duration-300">
+                      <ul className="flex list-disc flex-col gap-y-1 overflow-hidden pl-5 text-sm text-zinc-600 transition-all duration-300 dark:text-zinc-400">
                         {project.whatIDid
                           .slice(
                             0,
@@ -129,7 +129,7 @@ const ExperienceCardComponent = (props: Experience) => {
 
                       <button
                         id="show-more-button"
-                        className="w-fit border dark:border-zinc-700 py-1 px-2 rounded-md text-xs hover:bg-zinc-100 hover:dark:bg-zinc-700 transition-colors"
+                        className="w-fit rounded-md border px-2 py-1 text-xs transition-colors hover:bg-zinc-100 dark:border-zinc-700 hover:dark:bg-zinc-700"
                         onClick={() => toggleShowFullDetails(index)}
                       >
                         {!showFullDetails[index] ? 'Show more' : 'Show less'}

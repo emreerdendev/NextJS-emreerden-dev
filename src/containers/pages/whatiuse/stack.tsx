@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 //
-import { Stack } from '@/constants/pages/whatiuse/stack';
+import { Stack } from '@/constants/pages/whatiuse/stack'
 //
-import PageHeaderComponent from '@/components/page-header';
-import WhatIUseListComponent from '@/components/whatiuse-list';
+import PageHeaderComponent from '@/components/page-header'
+import WhatIUseListComponent from '@/components/whatiuse-list'
 
 const StackPageComponent = () => {
   return (
@@ -17,7 +17,7 @@ const StackPageComponent = () => {
         <WhatIUseListComponent name="Stack" constName={Stack} />
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default StackPageComponent;
+export default StackPageComponent
