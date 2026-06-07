@@ -8,10 +8,10 @@ import PageHeaderComponent from '@/components/page-header'
 import TruncatedTooltip from '@/components/truncated-tooltip'
 import { Button } from '@/components/ui/button'
 //
-import { Gear, Setup, Equipment } from '@/constants/pages/whatiuse/kit'
+import { Equipment, Gear, Setup } from '@/constants/pages/whatiuse/kit'
 //
-import type { Kit } from '@/types/whatiuse'
 import { cn } from '@/lib/utils'
+import type { Kit } from '@/types/whatiuse'
 
 const tabs = ['Gear', 'Setup', 'Equipment'] as const
 type Tab = (typeof tabs)[number]
@@ -58,8 +58,8 @@ const KitPageComponent = () => {
               onClick={() => setTab(b)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('h-8 w-full', {
-                'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700':
+              className={cn('h-8 w-full hover:text-zinc-500 dark:hover:text-zinc-400', {
+                'bg-white hover:bg-white hover:text-zinc-900 dark:bg-zinc-700 dark:hover:bg-zinc-700 dark:hover:text-zinc-50':
                   tab === b,
               })}
             >

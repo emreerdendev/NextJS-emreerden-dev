@@ -50,7 +50,7 @@ const SideBarExternalLink = ({
           <div className="text-xs text-zinc-600 dark:text-zinc-400">{meta}</div>
         )}
 
-        <div className="text-base">
+        <div className="text-base text-zinc-600 dark:text-zinc-400">
           <MdArrowOutward />
         </div>
       </div>

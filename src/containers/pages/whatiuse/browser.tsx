@@ -1,14 +1,14 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 //
 import { motion } from 'framer-motion'
 //
 import { Browser } from '@/constants/pages/whatiuse/browser'
 //
 import PageHeaderComponent from '@/components/page-header'
-import WhatIUseListComponent from '@/components/whatiuse-list'
 import { Button } from '@/components/ui/button'
+import WhatIUseListComponent from '@/components/whatiuse-list'
 import { cn } from '@/lib/utils'
 
 const BrowserPageComponent = () => {
@@ -35,8 +35,8 @@ const BrowserPageComponent = () => {
               onClick={() => setBrowser(b)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('h-8 w-full', {
-                'bg-white hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-700':
+              className={cn('h-8 w-full hover:text-zinc-500 dark:hover:text-zinc-400', {
+                'bg-white hover:bg-white hover:text-zinc-900 dark:bg-zinc-700 dark:hover:bg-zinc-700 dark:hover:text-zinc-50':
                   browser === b,
               })}
             >
