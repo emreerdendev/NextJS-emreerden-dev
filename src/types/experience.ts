@@ -3,9 +3,14 @@ export interface Experience {
   icon: string
   path: string
   date: string
-  position: string
   location: string
   workType: string
+  positions: Position[]
+}
+
+export interface Position {
+  title: string
+  date: string
   projects?: Project[]
 }
 
