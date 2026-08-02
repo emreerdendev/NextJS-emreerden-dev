@@ -107,13 +107,13 @@ export const ExperienceData: Experience[] = [
     name: 'Analyzify',
     icon: '/assets/icons/analyzify.png',
     path: 'https://analyzify.com/',
-    date: '24 March 2025 - Present',
+    date: '24 March 2025 - 15 May 2026',
     location: 'Tallinn, Harjumaa, Estonia',
     workType: 'Remote',
     positions: [
       {
         title: 'Front-End Developer',
-        date: '24 March 2025 - Present',
+        date: '24 March 2025 - 15 May 2026',
       },
     ],
   },

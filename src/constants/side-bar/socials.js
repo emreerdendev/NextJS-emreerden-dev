@@ -8,14 +8,9 @@ import {
 
 export const SocialLinks = [
   {
-    name: 'Twitter',
-    path: 'https://twitter.com/Wiazeph',
-    icon: <FiTwitter />,
-  },
-  {
-    name: 'Instagram',
-    path: 'https://instagram.com/Wiazeph',
-    icon: <FiInstagram />,
+    name: 'LinkedIn',
+    path: 'https://linkedin.com/in/Wiazeph',
+    icon: <FiLinkedin />,
   },
   {
     name: 'GitHub',
@@ -23,13 +18,18 @@ export const SocialLinks = [
     icon: <FiGithub />,
   },
   {
-    name: 'LinkedIn',
-    path: 'https://linkedin.com/in/Wiazeph',
-    icon: <FiLinkedin />,
+    name: 'Twitter',
+    path: 'https://twitter.com/Wiazeph',
+    icon: <FiTwitter />,
   },
   {
     name: 'Codepen',
     path: 'https://codepen.io/Wiazeph',
     icon: <FiCodepen />,
+  },
+  {
+    name: 'Instagram',
+    path: 'https://instagram.com/Wiazeph',
+    icon: <FiInstagram />,
   },
 ]

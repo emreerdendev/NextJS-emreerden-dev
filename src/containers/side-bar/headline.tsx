@@ -6,9 +6,9 @@ const HeadlineComponent = () => {
       <div className="Side-Bar-Title">Headline</div>
 
       <div className="flex flex-col gap-y-2 text-sm">
-        <div>Gamer,</div>
+        <div>Software Developer,</div>
 
-        <div>Software Developer</div>
+        <div>Gamer.</div>
       </div>
     </div>
   )

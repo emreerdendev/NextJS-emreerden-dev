@@ -17,7 +17,7 @@ const ExperienceComponent = () => {
         className="flex items-center gap-x-1.5"
       >
         <div className="text-center text-xl font-medium mdl:text-left">
-          Experience
+          Experiences
         </div>
         <span className="cursor-default rounded-md border px-2 py-1.5 text-[11px] leading-none text-zinc-500 transition-transform hover:scale-105 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-400">
           {totalDuration}
