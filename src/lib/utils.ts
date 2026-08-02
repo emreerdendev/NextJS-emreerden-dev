@@ -18,31 +18,65 @@ export function calculateAge(birthDate: Date): number {
   return age
 }
 
-export function calculateDaysBetween(dateStr: string): number {
+function parseDateRange(dateStr: string): { start: Date; end: Date } {
   const [startStr, endStr] = dateStr.split(' - ')
-  const start = new Date(startStr)
-  const end = endStr === 'Present' ? new Date() : new Date(endStr)
-  return Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24))
+  return {
+    start: new Date(startStr),
+    end: endStr === 'Present' ? new Date() : new Date(endStr),
+  }
+}
+
+function calendarDiff(start: Date, end: Date): { months: number; days: number } {
+  let months =
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth())
+  let days = end.getDate() - start.getDate()
+  if (days < 0) {
+    months--
+    days += new Date(end.getFullYear(), end.getMonth(), 0).getDate()
+  }
+  return { months, days }
+}
+
+function formatYearsMonths(totalMonths: number, days: number): string {
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+
+  const parts: string[] = []
+  if (years > 0) parts.push(`${years} ${years === 1 ? 'year' : 'years'}`)
+  if (months > 0) parts.push(`${months} ${months === 1 ? 'month' : 'months'}`)
+  if (parts.length === 0) parts.push(`${days} ${days === 1 ? 'day' : 'days'}`)
+
+  return parts.join(' ')
+}
+
+export function calculateDuration(dateStr: string): string {
+  const { start, end } = parseDateRange(dateStr)
+  const { months, days } = calendarDiff(start, end)
+  return formatYearsMonths(months, days)
 }
 
 export function calculateTotalExperience(
   experiences: { date: string }[]
 ): string {
+  let totalMonths = 0
+  let leftoverDays = 0
   let totalDays = 0
 
   for (const exp of experiences) {
-    totalDays += calculateDaysBetween(exp.date)
+    const { start, end } = parseDateRange(exp.date)
+    const diff = calendarDiff(start, end)
+    totalMonths += diff.months
+    leftoverDays += diff.days
+    totalDays += Math.round(
+      (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)
+    )
   }
 
-  const years = Math.floor(totalDays / 365)
-  const remainingAfterYears = totalDays % 365
-  const months = Math.floor(remainingAfterYears / 30)
-  const days = remainingAfterYears % 30
+  totalMonths += Math.floor(leftoverDays / 30)
+  leftoverDays %= 30
 
-  const parts: string[] = []
-  if (years > 0) parts.push(`${years} ${years === 1 ? 'year' : 'years'}`)
-  if (months > 0) parts.push(`${months} ${months === 1 ? 'month' : 'months'}`)
-  if (days > 0) parts.push(`${days} ${days === 1 ? 'day' : 'days'}`)
-
-  return parts.join(' ') || '0 days'
+  return `${formatYearsMonths(totalMonths, leftoverDays)} (${totalDays} ${
+    totalDays === 1 ? 'day' : 'days'
+  })`
 }
