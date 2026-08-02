@@ -2,7 +2,7 @@ import { FaHeart } from 'react-icons/fa'
 //
 import SideBarExternalLink from '@/components/side-bar-external-link'
 
-const SPONSOR_URL = 'https://github.com/sponsors/Wiazeph'
+const SPONSOR_URL = 'https://github.com/sponsors/emreerdendev'
 
 const SponsorComponent = () => {
   return (

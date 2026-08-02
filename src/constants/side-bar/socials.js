@@ -9,22 +9,22 @@ import {
 export const SocialLinks = [
   {
     name: 'LinkedIn',
-    path: 'https://linkedin.com/in/Wiazeph',
+    path: 'https://linkedin.com/in/emreerdendev',
     icon: <FiLinkedin />,
   },
   {
     name: 'GitHub',
-    path: 'https://github.com/Wiazeph',
+    path: 'https://github.com/emreerdendev',
     icon: <FiGithub />,
   },
   {
     name: 'Twitter',
-    path: 'https://twitter.com/Wiazeph',
+    path: 'https://twitter.com/emreerdendev',
     icon: <FiTwitter />,
   },
   {
     name: 'Codepen',
-    path: 'https://codepen.io/Wiazeph',
+    path: 'https://codepen.io/emreerdendev',
     icon: <FiCodepen />,
   },
   {

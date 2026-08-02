@@ -1,6 +1,6 @@
 import type { Repo } from '@/types/repo'
 
-const GITHUB_USER = 'Wiazeph'
+const GITHUB_USER = 'emreerdendev'
 const REPOS_URL = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`
 
 /** Raw shape of the fields we read from the GitHub REST repos endpoint. */
