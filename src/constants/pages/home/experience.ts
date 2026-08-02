@@ -112,8 +112,35 @@ export const ExperienceData: Experience[] = [
     workType: 'Remote',
     positions: [
       {
-        title: 'Front-End Developer',
-        date: '24 March 2025 - 15 May 2026',
+        title: 'Frontend Developer',
+        projects: [
+          {
+            name: 'Jens Hansen',
+            path: 'https://www.jenshansen.com/',
+            description:
+              'Custom Shopify theme & interactive product configurator for a jeweller (maker of the LOTR "One Ring").',
+            whatIDid: [
+              'Built a 3D multi-step Ring Builder (5,000+ LOC) with an interactive WebGL/GLTF ring viewer — real-time model switching, live engraving on the model, variant matching and pricing',
+              'Engineered a custom engraving system — auto font-scaling fit engine and Tengwar/Elvish transcription module',
+              'Designed a unified Stone Quality selector (color/clarity from quality tiers) and multi-region ring sizing (UK/US/EU) with conversion and validation, all compatible with Shopify variants',
+              'Built advanced product-variant UX (dynamic pricing, out-of-stock handling, tooltips, metal-type detection) with responsive, mobile-first layouts from Figma',
+              'Integrated third-party apps (infinite-options), fixed Google Rich Results structured-data errors, and maintained multi-storefront consistency across regional stores (.co.nz / US)',
+            ],
+          },
+          {
+            name: 'Risify',
+            path: 'https://apps.shopify.com/risify',
+            description:
+              'SEO & Structured-Data Shopify App (Admin App + Storefront Theme Extensions).',
+            whatIDid: [
+              'Built a Schema.org JSON-LD engine (Organization, Product, Website, FAQ) with live preview, Google Rich Results testing, and storefront theme extensions for SEO injection',
+              'Developed core feature UIs — table management (sortable, assignment, event-driven bulk-edit modals), navigation (collection menus, breadcrumbs, related-search), and billing & SEO audit dashboards (quota, broken-links, keyword tracking)',
+              'Shipped an AI-powered Design Customization feature (800+ LOC) for automated storefront styling with live previews',
+              'Built type-safe GraphQL flows (Code Generator), Shopify metafield management, and an accessible (a11y) design-system component library reused across modules',
+              'Established a comprehensive unit testing suite (MSW mocking for Shopify & internal APIs) and drove performance optimizations — memoization, reduced query filtering, faster metafield saving',
+            ],
+          },
+        ],
       },
     ],
   },

@@ -66,9 +66,12 @@ const ExperienceCardComponent = (props: Experience) => {
                   {position.title}
                 </div>
 
-                <div className="text-xs text-zinc-500 dark:text-zinc-400">
-                  {position.date} ({calculateDaysBetween(position.date)} days)
-                </div>
+                {position.date && (
+                  <div className="text-xs text-zinc-500 dark:text-zinc-400">
+                    {position.date} ({calculateDaysBetween(position.date)}{' '}
+                    days)
+                  </div>
+                )}
               </div>
 
               {position.projects && (

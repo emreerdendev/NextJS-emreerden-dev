@@ -10,7 +10,7 @@ export interface Experience {
 
 export interface Position {
   title: string
-  date: string
+  date?: string
   projects?: Project[]
 }
 
